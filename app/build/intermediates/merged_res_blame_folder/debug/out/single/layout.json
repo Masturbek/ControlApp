@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_gallery.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_main.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_slideshow.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\fragment_slideshow.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\boot_widget.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\boot_widget.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_settings.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\app_bar_main.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header_main.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "G:\\Programming\\WOL\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_boot.xml",
+        "source": "G:\\Programming\\WOL\\app\\src\\main\\res\\layout\\fragment_boot.xml"
+    }
+]
