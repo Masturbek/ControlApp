@@ -24,7 +24,7 @@
 14-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:8:22-78
 15
 16    <application
-16-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:10:5-46:19
+16-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:10:5-47:19
 17        android:allowBackup="true"
 17-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:11:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -38,60 +38,59 @@
 22-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:14:9-54
 23        android:supportsRtl="true"
 23-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:15:9-35
-24        android:testOnly="true"
-25        android:theme="@style/Theme.Control" >
-25-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:16:9-45
-26        <receiver android:name="com.example.control.BootWidget" >
-26-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:18:9-27:20
-26-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:18:19-45
-27            <intent-filter>
-27-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:19:13-22:29
-28                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-28-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:17-84
-28-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:25-81
-29            </intent-filter>
-30
-31            <meta-data
-31-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:24:13-26:60
-32                android:name="android.appwidget.provider"
-32-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:25:17-58
-33                android:resource="@xml/boot_widget_info" />
-33-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:26:17-57
-34        </receiver>
-35
-36        <activity
-36-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:29:9-38:20
-37            android:name="com.example.control.MainActivity"
-37-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:30:13-41
-38            android:label="@string/app_name"
-38-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:31:13-45
-39            android:theme="@style/Theme.Control.NoActionBar" >
-39-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:32:13-61
-40            <intent-filter>
-40-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:33:13-37:29
-41                <action android:name="android.intent.action.MAIN" />
-41-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:34:17-69
-41-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:34:25-66
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:17-77
-43-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:27-74
-44            </intent-filter>
-45        </activity>
-46
-47        <service
-47-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:9-45:19
-48            android:name="com.example.control.BootWidgetService"
-48-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:18-51
-49            android:enabled="true" >
-49-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:40:9-31
-50            <intent-filter>
-50-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:19:13-22:29
-51                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-51-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:17-84
-51-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:25-81
-52            </intent-filter>
-53        </service>
-54    </application>
-55
-56</manifest>
+24        android:theme="@style/Theme.Control" >
+24-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:16:9-45
+25        <receiver android:name="com.example.control.BootWidget" >
+25-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:18:9-27:20
+25-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:18:19-45
+26            <intent-filter>
+26-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:19:13-22:29
+27                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+27-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:17-84
+27-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:25-81
+28            </intent-filter>
+29
+30            <meta-data
+30-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:24:13-26:60
+31                android:name="android.appwidget.provider"
+31-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:25:17-58
+32                android:resource="@xml/boot_widget_info" />
+32-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:26:17-57
+33        </receiver>
+34
+35        <activity
+35-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:29:9-38:20
+36            android:name="com.example.control.MainActivity"
+36-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:30:13-41
+37            android:label="@string/app_name"
+37-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:31:13-45
+38            android:theme="@style/Theme.Control.NoActionBar" >
+38-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:32:13-61
+39            <intent-filter>
+39-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:33:13-37:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:34:17-69
+40-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:34:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:17-77
+42-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:27-74
+43            </intent-filter>
+44        </activity>
+45
+46        <service
+46-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:9-46:19
+47            android:name="com.example.control.BootWidgetService"
+47-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:18-51
+48            android:enabled="true" >
+48-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:40:9-31
+49            <intent-filter>
+49-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:19:13-22:29
+50                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+50-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:17-84
+50-->G:\Programming\WOL\app\src\main\AndroidManifest.xml:20:25-81
+51            </intent-filter>
+52        </service>
+53    </application>
+54
+55</manifest>

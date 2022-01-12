@@ -19,7 +19,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\bilya\.android\avd\pixel_2_pie_9_0_-_api_28.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@F6IRHUAQHEBUP7FI]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -70,7 +70,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="SerialNumber@F6IRHUAQHEBUP7FI" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-01-06T09:57:56.110594300Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-01-12T08:26:11.407738500Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
@@ -218,22 +218,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="419" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1641207371467" />
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1641805447302">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1641973067084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641805447302" />
-    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1641805447302">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
+    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1641973067084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641805447302" />
-    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1641805447302">
+    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
+    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1641973067084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641805447302" />
-    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1641805447302">
+    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1641973067084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641805447302" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
     <state x="204" y="32" width="998" height="712" key="SettingsEditor" timestamp="1641219330061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

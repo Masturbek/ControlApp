@@ -56,6 +56,10 @@ com/example/control/databinding/FragmentSlideshowBinding.java
  com.example.control.databinding.FragmentSlideshowBinding
 com/example/control/BootWidgetService.java
  com.example.control.BootWidgetService
+ com.example.control.BootWidgetService$BootPC
+ com.example.control.BootWidgetService$ConnectCheck
+ com.example.control.BootWidgetService$ControlCommand
+ com.example.control.BootWidgetService$StartNET
 com/example/control/Gestures.java
  com.example.control.OnSwipeTouchListener
  com.example.control.OnSwipeTouchListener$1

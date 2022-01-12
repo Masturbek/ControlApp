@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
+ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
 MERGED from [androidx.databinding:databinding-adapters:4.2.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\5f096c2949256c8bc86d4203bdc4a9eb\databinding-adapters-4.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:databinding-runtime:4.2.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\370ca15595f98027c798fd7846cf88b7\databinding-runtime-4.2.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:viewbinding:4.2.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\947a71c6d3280253a2aa382ca3d9c53f\viewbinding-4.2.1\AndroidManifest.xml:17:1-22:12
@@ -44,20 +44,20 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\bilya\.gradle\cache
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\597822b5f1d6b2ae8477c0a08baab41d\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\31c5a9d741217c1f32107f5a83ea7081\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\8d11d86b037c681c007c37e744e988c0\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
-INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
-		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
-		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-48:12
+		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from G:\Programming\WOL\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:2:11-69
@@ -78,7 +78,7 @@ ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:8:5-81
 	android:name
 		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:8:22-78
 application
-ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:10:5-46:19
+ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:10:5-47:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\7213920ce56ceed469c1efaf566dd65c\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\7213920ce56ceed469c1efaf566dd65c\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\bilya\.gradle\caches\transforms-2\files-2.1\753e3fab65deb59527b8392ce093b022\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
@@ -136,7 +136,7 @@ ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
 		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:36:27-74
 service#com.example.control.BootWidgetService
-ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:9-45:19
+ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:39:9-46:19
 	android:enabled
 		ADDED from G:\Programming\WOL\app\src\main\AndroidManifest.xml:40:9-31
 	android:name
