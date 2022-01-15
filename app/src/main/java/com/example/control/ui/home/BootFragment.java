@@ -51,6 +51,7 @@ public class BootFragment extends Fragment {
             @Override
             public void onClick(View view) {new ControlCommand().execute(Boot.Sleep); }
         });
+
         binding.restartbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {new ControlCommand().execute(Boot.Restart); }

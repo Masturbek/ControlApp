@@ -141,19 +141,6 @@ private ActivityMainBinding binding;
     }
     public void  SwipeRigth(){
         //onSupportNavigateUp();
-        startForegroundService(new Intent(getApplicationContext(),BootWidgetService.class));
-
-    }
-
-    public void clickOn(View view) {
-        //DrawerLayout navDrawer = findViewById(R.id.drawer_layout);
-        //navDrawer.openDrawer(Gravity.START);
-        //mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
-        //mySwipeRefreshLayout.setRefreshing(false);
-        PcState(1);
-    }
-    public void clickOff(View view) {
-        PcState(0);
     }
 
     public void PcState(int state) {

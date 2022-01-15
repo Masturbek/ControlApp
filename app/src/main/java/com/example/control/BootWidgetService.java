@@ -13,9 +13,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.icu.util.ULocale;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ import androidx.core.app.NotificationManagerCompat;
 import com.example.control.NET.Boot;
 import com.example.control.NET.Net;
 
+import java.util.Locale;
 import java.util.MissingFormatArgumentException;
 
 public class BootWidgetService extends Service {
@@ -50,7 +54,7 @@ public class BootWidgetService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         String CHANNEL_ID = "my_channel_01";
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
-                "Channel human readable title",
+                "Boot Service",
                 NotificationManager.IMPORTANCE_DEFAULT);
 
         ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
@@ -60,6 +64,9 @@ public class BootWidgetService extends Service {
                 .setContentText("").build();
 
         startForeground(1, notification);
+
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.EFFECT_HEAVY_CLICK));
 
         sPref = getApplicationContext().getSharedPreferences("netconfig",0);;
         //Net NET = new Net(sPref.getString("mac_address",""),sPref.getString("ip_address",""),sPref.getString("port",""));
@@ -72,7 +79,6 @@ public class BootWidgetService extends Service {
 
         apId = views.getLayoutId();
         //onTaskRemoved(intent);
-
 
         if(intent.getAction()!=null) {
             switch (intent.getAction()){
@@ -88,16 +94,9 @@ public class BootWidgetService extends Service {
                 break;
             }
         }
-        /*if(intent.getAction().equalsIgnoreCase("android.appwidget.action.APPWIDGET_UPDATE")){
-            // do your stuff here
-            //Net.boot.dothis();
-        }*/
-
-       // Toast.makeText(getApplicationContext(), "Service", Toast.LENGTH_SHORT).show();
-
-
-        //return super.onStartCommand(intent, flags, startId);
-        return START_STICKY;
+        stopSelf();
+        return super.onStartCommand(intent, flags, startId);
+        //return START_STICKY;
     }
 
     @Override
@@ -114,7 +113,6 @@ public class BootWidgetService extends Service {
         @Override
         protected Void doInBackground(Void... params) {
 
-            //NET = new Net(sPref.getString("mac_address", ""),sPref.getString("ip_address", ""),sPref.getString("port", ""));
             NET = new Net(sPref.getString("mac_address",""),sPref.getString("ip_address",""),sPref.getString("port",""));
             return null;
         }
@@ -130,7 +128,6 @@ public class BootWidgetService extends Service {
         }
         @Override
         protected Integer doInBackground(Void... params) {
-            // TODO Boot.mac_address
             return NET.boot.CheckConnection();
         }
         @Override
@@ -162,7 +159,7 @@ public class BootWidgetService extends Service {
             }
             break;
         }
-        int[] ids = AppWidgetManager.getInstance(getApplication())
+       int[] ids = AppWidgetManager.getInstance(getApplication())
                 .getAppWidgetIds(new ComponentName(getApplication(), BootWidget.class));
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
         sendBroadcast(intent);
@@ -171,8 +168,8 @@ public class BootWidgetService extends Service {
     void UpdateWidget(){
         Intent intent = new Intent(this, BootWidget.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-// Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
-// since it seems the onUpdate() is only fired on that:
+        // Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
+        // since it seems the onUpdate() is only fired on that:
         int[] ids = AppWidgetManager.getInstance(getApplication())
                 .getAppWidgetIds(new ComponentName(getApplication(), BootWidget.class));
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);

@@ -19,7 +19,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@F6IRHUAQHEBUP7FI]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\bilya\.android\avd\pixel_2_pie_9_0_-_api_28.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -210,30 +210,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="274" width="835" height="491" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1641660126971" />
-    <state x="752" y="266" key="AndroidProcessChooserDialog" timestamp="1641734084042">
+    <state x="752" y="266" key="AndroidProcessChooserDialog" timestamp="1642096309576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="752" y="266" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1641734084042" />
+    <state x="752" y="266" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1642096309576" />
     <state x="854" y="419" key="FileChooserDialogImpl" timestamp="1641207371467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="419" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1641207371467" />
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1641973067084">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom" timestamp="1642231032212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
-    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1641973067084">
+    <state width="1877" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1642231032212" />
+    <state width="1877" height="219" key="GridCell.Tab.0.center" timestamp="1642231032211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
-    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1641973067084">
+    <state width="1877" height="219" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1642231032211" />
+    <state width="1877" height="219" key="GridCell.Tab.0.left" timestamp="1642231032211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
-    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1641973067084">
+    <state width="1877" height="219" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1642231032211" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right" timestamp="1642231032212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641973067084" />
+    <state width="1877" height="219" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1642231032212" />
     <state x="204" y="32" width="998" height="712" key="SettingsEditor" timestamp="1641219330061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

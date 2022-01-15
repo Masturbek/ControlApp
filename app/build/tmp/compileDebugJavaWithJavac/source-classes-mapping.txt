@@ -46,10 +46,6 @@ com/example/control/databinding/NavHeaderMainBinding.java
  com.example.control.databinding.NavHeaderMainBinding
 com/example/control/BootWidget.java
  com.example.control.BootWidget
- com.example.control.BootWidget$BootPC
- com.example.control.BootWidget$ConnectCheck
- com.example.control.BootWidget$ControlCommand
- com.example.control.BootWidget$StartNET
 com/example/control/databinding/ActivityMainBinding.java
  com.example.control.databinding.ActivityMainBinding
 com/example/control/databinding/FragmentSlideshowBinding.java

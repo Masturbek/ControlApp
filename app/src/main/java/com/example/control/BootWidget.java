@@ -30,24 +30,25 @@ public class BootWidget extends AppWidgetProvider {
     static SharedPreferences sPref;
     //static  RemoteViews views;
 
-    static AppWidgetManager apm;
+  /*  static AppWidgetManager apm;
     static Integer wid;
-    static Resources res;
     static Context Ctx;
-    static Integer stat = 0;
+   */
+  static Resources res;
+    static Integer PCstat = 0;
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
         // Construct the RemoteViews object
-        apm = appWidgetManager;
+       /* apm = appWidgetManager;
         wid = appWidgetId;
-        Ctx = context;
+        Ctx = context;*/
         //new StartNET().execute();
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.boot_widget);
 
         //views.setTextViewText(R.id.widgetpcstate,"GG");
 
-        switch (stat) {
+        switch (PCstat) {
             case 0:{
                 views.setTextViewText(R.id.widgetpcstate,"off");
                 views.setTextColor(R.id.widgetpcstate,context.getResources().getColor(R.color.off));
@@ -100,36 +101,28 @@ public class BootWidget extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.boot_widget);
 
         switch (intent.getAction()){
-            case BUTTON_BOOT:{/*new BootPC().execute();*/context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.BOOT));}
+            case BUTTON_BOOT:{context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.BOOT));}
             break;
-            case BUTTON_OFF:{/*new ControlCommand().execute(Boot.Shutdown);*/context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.SHUTDOWN));}
+            case BUTTON_OFF:{context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.SHUTDOWN));}
             break;
-            case BUTTON_SLEEP:{/*new ControlCommand().execute(Boot.Sleep);*/context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.SLEEP));}
+            case BUTTON_SLEEP:{context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.SLEEP));}
             break;
-            case BUTTON_RESTART:{/*new ControlCommand().execute(Boot.Restart);*/context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.RESTART));}
+            case BUTTON_RESTART:{context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.RESTART));}
             break;
-            case BUTTON_REFRESH:{/*new ConnectCheck().execute();*/ context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.REFRESH));}
+            case BUTTON_REFRESH:{ context.startForegroundService(new Intent(context,BootWidgetService.class).setAction(BootWidgetService.REFRESH)); }
             break;
-            case "on":{views.setTextViewText(R.id.widgetpcstate,"on");
-                views.setTextColor(R.id.widgetpcstate,context.getResources().getColor(R.color.on));stat = 1;}
+            case "on":{PCstat = 1;}
             break;
-            case "off":{views.setTextViewText(R.id.widgetpcstate,"off");
-                views.setTextColor(R.id.widgetpcstate,context.getResources().getColor(R.color.off));stat = 0;}
+            case "off":{PCstat = 0;}
             break;
         }
 
-        //Net.boot.dothis();
-        //Toast.makeText(context, "Clicked!", Toast.LENGTH_SHORT).show();
-        Log.d("widget", "onReceive: "+intent.getAction());
-
-        //AppWidgetManager ad = new AppWidgetManager(context);
-        //apm.updateAppWidget(views.getLayoutId(), views);
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+        /*AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.boot_widget);
         ComponentName thisWidget = new ComponentName(context, BootWidget.class);
-        appWidgetManager.updateAppWidget(thisWidget, remoteViews);
+        appWidgetManager.updateAppWidget(thisWidget, remoteViews);*/
     }
-    public class StartNET extends AsyncTask<Void, Void, Void> {
+    /*public class StartNET extends AsyncTask<Void, Void, Void> {
         protected void onPreExecute() {
             super.onPreExecute();
         }
@@ -144,12 +137,11 @@ public class BootWidget extends AppWidgetProvider {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
         }
-    }
+    }*/
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
         // There may be multiple widgets active, so update all of them
-        Log.d("upd", "onUpdate: ");
 
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
@@ -166,17 +158,17 @@ public class BootWidget extends AppWidgetProvider {
         // Enter relevant functionality for when the last widget is disabled
     }
 
-    public void PcState(int state) {
+   /* public void PcState(int state) {
       //  RemoteViews views = new RemoteViews(, R.layout.boot_widget);
         switch (state) {
             case 0:{
-                /*views.setTextViewText(R.id.widgetpcstate,"off");
-                views.setTextColor(R.id.widgetpcstate,res.getColor(R.color.off));*/
+                views.setTextViewText(R.id.widgetpcstate,"off");
+                views.setTextColor(R.id.widgetpcstate,res.getColor(R.color.off));
             }
             break;
             case 1:{
-              /*  views.setTextViewText(R.id.widgetpcstate,"on");
-                views.setTextColor(R.id.widgetpcstate,res.getColor(R.color.on));*/
+                views.setTextViewText(R.id.widgetpcstate,"on");
+                views.setTextColor(R.id.widgetpcstate,res.getColor(R.color.on));
             }
             break;
 
@@ -189,7 +181,6 @@ public class BootWidget extends AppWidgetProvider {
         }
         @Override
         protected Integer doInBackground(Void... params) {
-            // TODO Boot.mac_address
             NET = new Net("54:04:A6:0E:27:80","qwerty.ddns.net","8008");
             return NET.boot.CheckConnection();
         }
@@ -230,5 +221,5 @@ public class BootWidget extends AppWidgetProvider {
             super.onPostExecute(result);
             Toast.makeText(Ctx, result, Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }
