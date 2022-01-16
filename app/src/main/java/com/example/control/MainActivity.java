@@ -61,7 +61,7 @@ private ActivityMainBinding binding;
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_boot, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
+                .setOpenableLayout(drawer) //.setDrawerLayout(drawer).
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -91,10 +91,6 @@ private ActivityMainBinding binding;
 
         // Call startService with Intent parameter.
         //startService(myIntent);
-
-        //
-
-        //
 
        // new Connect().execute();
     }

@@ -1,5 +1,6 @@
 package com.example.control;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.NotificationChannel;
@@ -14,6 +15,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.icu.util.ULocale;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
@@ -27,15 +30,20 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.example.control.NET.Boot;
 import com.example.control.NET.Net;
+import com.example.control.ui.home.BootFragment;
+import com.example.control.ui.home.BootViewModel;
 
 import java.util.Locale;
 import java.util.MissingFormatArgumentException;
 
-public class BootWidgetService extends Service {
+public class BootWidgetService extends Service{
     public static final String REFRESH = "REFRESH";
+    public static final String REFRESH_onRESUME = "REFRESH_onRESUME";
     public static final String BOOT = "BOOT";
     public static final String SLEEP = "SLEEP";
     public static final String SHUTDOWN = "SHUTDOWN";
@@ -51,7 +59,19 @@ public class BootWidgetService extends Service {
         return null;
     }
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public void onCreate(){
+        super.onCreate();
+        sPref = getApplicationContext().getSharedPreferences("netconfig",0);;
+        //Net NET = new Net(sPref.getString("mac_address",""),sPref.getString("ip_address",""),sPref.getString("port",""));
+        res = getResources();
+        new StartNET().execute();
+        apm = AppWidgetManager.getInstance(this);
+
+
+        // Reaches the view on widget and displays the number
+        RemoteViews views = new RemoteViews(getPackageName(), R.layout.boot_widget);
+
+        apId = views.getLayoutId();
         String CHANNEL_ID = "my_channel_01";
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
                 "Boot Service",
@@ -64,39 +84,48 @@ public class BootWidgetService extends Service {
                 .setContentText("").build();
 
         startForeground(1, notification);
+    }
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
 
-        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.EFFECT_HEAVY_CLICK));
-
-        sPref = getApplicationContext().getSharedPreferences("netconfig",0);;
-        //Net NET = new Net(sPref.getString("mac_address",""),sPref.getString("ip_address",""),sPref.getString("port",""));
-        res = getResources();
-        new StartNET().execute();
-        apm = AppWidgetManager.getInstance(this);
-
-        // Reaches the view on widget and displays the number
-        RemoteViews views = new RemoteViews(getPackageName(), R.layout.boot_widget);
-
-        apId = views.getLayoutId();
         //onTaskRemoved(intent);
+        ConnectivityManager conMgr = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if(intent.getAction()!=null) {
-            switch (intent.getAction()){
-                case REFRESH : { new ConnectCheck().execute();}
-                break;
-                case BOOT : { new BootPC().execute();}
-                break;
-                case SLEEP : { new ControlCommand().execute(Boot.Sleep);}
-                break;
-                case SHUTDOWN : { new ControlCommand().execute(Boot.Shutdown);}
-                break;
-                case RESTART : { new ControlCommand().execute(Boot.Restart);}
-                break;
+
+            if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED
+                    || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED ) {
+
+                switch (intent.getAction()){
+                    case REFRESH : { new ConnectCheck().execute();}
+                    break;
+                    case REFRESH_onRESUME: { new ConnectCheck().execute();}
+                    break;
+                    case BOOT : { new BootPC().execute();}
+                    break;
+                    case SLEEP : { new ControlCommand().execute(Boot.Sleep);}
+                    break;
+                    case SHUTDOWN : { new ControlCommand().execute(Boot.Shutdown);}
+                    break;
+                    case RESTART : { new ControlCommand().execute(Boot.Restart);}
+                    break;
+                }
+                if(!intent.getAction().equals(REFRESH_onRESUME)) {
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.EFFECT_HEAVY_CLICK));
+                }
+            }
+            else if ( conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.DISCONNECTED
+                    || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.DISCONNECTED) {
+                PcState(0);
+                Toast.makeText(getApplicationContext(), "No internet connection", Toast.LENGTH_SHORT).show();
             }
         }
-        stopSelf();
-        return super.onStartCommand(intent, flags, startId);
-        //return START_STICKY;
+
+       // stopSelf();
+        super.onStartCommand(intent, flags, startId);
+        //return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
     }
 
     @Override
@@ -149,6 +178,7 @@ public class BootWidgetService extends Service {
             case 0:{
                 views.setTextViewText(R.id.widgetpcstate,"off");
                 views.setTextColor(R.id.widgetpcstate,res.getColor(R.color.off));
+
                 intent.setAction("off");
             }
             break;
@@ -159,6 +189,12 @@ public class BootWidgetService extends Service {
             }
             break;
         }
+        Log.d("state", "PcState: "+state);
+        Intent intent1 = new Intent();
+        intent1.setAction("REFRESH_MAIN");
+        intent1.putExtra("pcstate",state);
+        sendBroadcast(intent1);
+
        int[] ids = AppWidgetManager.getInstance(getApplication())
                 .getAppWidgetIds(new ComponentName(getApplication(), BootWidget.class));
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);

@@ -1,5 +1,6 @@
 package com.example.control;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -10,6 +11,7 @@ import com.example.control.ui.home.BootViewModel;
 import java.lang.invoke.MutableCallSite;
 
 public class MainViewModel extends ViewModel {
+
 
     public MainViewModel(){
 

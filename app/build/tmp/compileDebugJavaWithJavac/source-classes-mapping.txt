@@ -2,11 +2,8 @@ com/example/control/databinding/FragmentSettingsBinding.java
  com.example.control.databinding.FragmentSettingsBinding
 com/example/control/databinding/ContentMainBinding.java
  com.example.control.databinding.ContentMainBinding
-com/example/control/MainActivity.java
- com.example.control.MainActivity
- com.example.control.MainActivity$1
- com.example.control.MainActivity$2
- com.example.control.MainActivity$StartNET
+com/example/control/databinding/BootWidgetBinding.java
+ com.example.control.databinding.BootWidgetBinding
 com/example/control/ui/gallery/GalleryFragment.java
  com.example.control.ui.gallery.GalleryFragment
  com.example.control.ui.gallery.GalleryFragment$1
@@ -17,17 +14,11 @@ com/example/control/ui/settings/SettingsModel.java
  com.example.control.ui.settings.SettingsModel
 com/example/control/ui/home/BootViewModel.java
  com.example.control.ui.home.BootViewModel
-com/example/control/ui/home/BootFragment.java
- com.example.control.ui.home.BootFragment
- com.example.control.ui.home.BootFragment$1
- com.example.control.ui.home.BootFragment$2
- com.example.control.ui.home.BootFragment$3
- com.example.control.ui.home.BootFragment$4
- com.example.control.ui.home.BootFragment$5
- com.example.control.ui.home.BootFragment$6
- com.example.control.ui.home.BootFragment$BootPC
- com.example.control.ui.home.BootFragment$ConnectionCheck
- com.example.control.ui.home.BootFragment$ControlCommand
+com/example/control/NET/Boot.java
+ com.example.control.NET.Boot
+ com.example.control.NET.Boot$BootPC
+ com.example.control.NET.Boot$ConnectCheck
+ com.example.control.NET.Boot$ControlCommand
 com/example/control/DataBindingTriggerClass.java
  com.example.control.DataBindingTriggerClass
 com/example/control/databinding/FragmentBootBinding.java
@@ -66,12 +57,22 @@ com/example/control/ui/gallery/GalleryViewModel.java
  com.example.control.ui.gallery.GalleryViewModel
 com/example/control/NET/Net.java
  com.example.control.NET.Net
-com/example/control/databinding/BootWidgetBinding.java
- com.example.control.databinding.BootWidgetBinding
-com/example/control/NET/Boot.java
- com.example.control.NET.Boot
- com.example.control.NET.Boot$BootPC
- com.example.control.NET.Boot$ConnectCheck
- com.example.control.NET.Boot$ControlCommand
+com/example/control/ui/home/BootFragment.java
+ com.example.control.ui.home.BootFragment
+ com.example.control.ui.home.BootFragment$1
+ com.example.control.ui.home.BootFragment$2
+ com.example.control.ui.home.BootFragment$3
+ com.example.control.ui.home.BootFragment$4
+ com.example.control.ui.home.BootFragment$5
+ com.example.control.ui.home.BootFragment$6
+ com.example.control.ui.home.BootFragment$BootPC
+ com.example.control.ui.home.BootFragment$ConnectionCheck
+ com.example.control.ui.home.BootFragment$ControlCommand
+ com.example.control.ui.home.BootFragment$MyBroadcastReceiver
+com/example/control/MainActivity.java
+ com.example.control.MainActivity
+ com.example.control.MainActivity$1
+ com.example.control.MainActivity$2
+ com.example.control.MainActivity$StartNET
 com/example/control/MainViewModel.java
  com.example.control.MainViewModel

@@ -29,10 +29,12 @@ public class Boot {
     public static Integer CheckConnection(){
         Socket socket = new Socket();
         try {
-            socket.connect(Net.socketAddress,2000);
+            //socket.connect(Net.socketAddress,2000);
+            socket.connect(new InetSocketAddress(Net.IpAddress,Net.Port),2000);
             socket.close();
             return 1;
         } catch (IOException e) {
+            Log.d("Exc", "CheckConnection: "+e);
             return 0;
         }
     }
@@ -73,7 +75,7 @@ public class Boot {
      public static String Command(Integer mod){
         Socket socket = new Socket();
         try {
-            socket.connect(Net.socketAddress,5000);
+            socket.connect(new InetSocketAddress(Net.IpAddress,Net.Port),5000);
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
             DataOutputStream s = new DataOutputStream(socket.getOutputStream());
             writer.println(mod.toString());

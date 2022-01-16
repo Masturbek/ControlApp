@@ -1,5 +1,9 @@
 package com.example.control.ui.home;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.control.BootWidgetService;
 import com.example.control.MainViewModel;
 import com.example.control.NET.Boot;
 import com.example.control.R;
@@ -29,6 +34,8 @@ public class BootFragment extends Fragment {
     private FragmentBootBinding binding;
     private BootWidgetBinding bootWidgetBinding;
     private TextView tv1;
+    public static final String REFRESH_MAIN = "REFRESH_MAIN";
+    MyBroadcastReceiver receiver;
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
@@ -36,29 +43,29 @@ public class BootFragment extends Fragment {
         //mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
         binding = FragmentBootBinding.inflate(inflater, container, false);
-        bootWidgetBinding = BootWidgetBinding.inflate(inflater, container, false);
+        //bootWidgetBinding = BootWidgetBinding.inflate(inflater, container, false);
 
          View view = inflater.inflate(R.layout.fragment_boot, container, false);
         binding.bootbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {new BootPC().execute(); }
+            public void onClick(View view) {getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.BOOT)); }
         });
         binding.offbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { new ControlCommand().execute(Boot.Shutdown); }
+            public void onClick(View view) { getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.SHUTDOWN));  }
         });
         binding.sleepbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {new ControlCommand().execute(Boot.Sleep); }
+            public void onClick(View view) {getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.SLEEP)); }
         });
 
         binding.restartbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {new ControlCommand().execute(Boot.Restart); }
+            public void onClick(View view) {getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.RESTART));  }
         });
         binding.refreshbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {clickRefresh();}
+            public void onClick(View view) {/*clickRefresh();*/getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.REFRESH)); }
         });
         tv1 = binding.text1;
         bootViewModel.getPcState().observe(getViewLifecycleOwner(), new Observer<Integer>()  {
@@ -79,6 +86,15 @@ public class BootFragment extends Fragment {
         return root;
     }
 
+   /* private BroadcastReceiver receiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("Intent", "onReceive: "+intent.getIntExtra("pcstate",0));
+        }
+    };*/
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -92,11 +108,27 @@ public class BootFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-       new ConnectionCheck().execute();
+       //new ConnectionCheck().execute();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("REFRESH_MAIN");
+        receiver = new MyBroadcastReceiver();
+        getActivity().registerReceiver(receiver, intentFilter);
+        getContext().startForegroundService(new Intent(getContext(), BootWidgetService.class).setAction(BootWidgetService.REFRESH_onRESUME));
     }
+    private class MyBroadcastReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            /*Bundle extras = intent.getExtras();
+            String state = extras.getString("pcstate");*/
+            bootViewModel.setPcState(intent.getIntExtra("pcstate",0));
+            Log.d("int", "onReceive: "+  intent.getIntExtra("pcstate",0));// update your textView in the main layout
+        }
+    }
+
     @Override
     public void onPause() {
         super.onPause();
+        getActivity().unregisterReceiver(receiver);
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
