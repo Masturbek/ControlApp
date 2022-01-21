@@ -34,7 +34,6 @@ public class Boot {
             socket.close();
             return 1;
         } catch (IOException e) {
-            Log.d("Exc", "CheckConnection: "+e);
             return 0;
         }
     }

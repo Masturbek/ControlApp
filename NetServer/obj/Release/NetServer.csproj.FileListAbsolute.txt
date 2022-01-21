@@ -1,0 +1,7 @@
+G:\Programming\Net\NetServer\bin\Release\NetServer.exe.config
+G:\Programming\Net\NetServer\bin\Release\NetServer.exe
+G:\Programming\Net\NetServer\bin\Release\NetServer.pdb
+G:\Programming\Net\NetServer\obj\Release\NetServer.csproj.CoreCompileInputs.cache
+G:\Programming\Net\NetServer\obj\Release\NetServer.exe
+G:\Programming\Net\NetServer\obj\Release\NetServer.pdb
+G:\Programming\Net\NetServer\obj\Release\NetServer.csproj.AssemblyReference.cache

@@ -1,0 +1,7 @@
+G:\Programming\Net\NetServer\bin\Debug\NetServer.exe.config
+G:\Programming\Net\NetServer\bin\Debug\NetServer.exe
+G:\Programming\Net\NetServer\bin\Debug\NetServer.pdb
+G:\Programming\Net\NetServer\obj\Debug\NetServer.csproj.AssemblyReference.cache
+G:\Programming\Net\NetServer\obj\Debug\NetServer.csproj.CoreCompileInputs.cache
+G:\Programming\Net\NetServer\obj\Debug\NetServer.exe
+G:\Programming\Net\NetServer\obj\Debug\NetServer.pdb

@@ -171,7 +171,7 @@ private ActivityMainBinding binding;
         ed.putString("ip_address", settingsViewModel.ip_address.get());
         ed.putString("port",settingsViewModel.port.get());
         ed.commit();
-        Toast.makeText(this, "Saved ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
         Navigation.findNavController(this,R.id.nav_host_fragment_content_main).popBackStack();
         new StartNET().execute();
     }
